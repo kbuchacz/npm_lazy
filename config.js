@@ -20,7 +20,7 @@ module.exports = {
   // Note: Since any relative path is resolved relative to the current working
   // directory when the server is started, you should use a full path.
 
-  cacheDirectory: homePath + '/.npm_lazy',
+  cacheDirectory: '/var/npm-cache/',
 
   // `cacheAge`: maximum age before an index is refreshed from remoteUrl
   // - negative value means no refresh (e.g. once cached, never update the package.json metadata)
@@ -48,18 +48,18 @@ module.exports = {
   // Remote and local URL
 
   // external url to npm_lazy, no trailing /
-  externalUrl: 'http://localhost:8080',
+  externalUrl: 'http://127.0.0.1:7200',
   // registry url with trailing /
   remoteUrl: 'https://registry.npmjs.org/',
   // bind port and host
-  port: 8080,
+  port: 7200,
   host: '0.0.0.0',
 
   // Proxy config
   // You can also configure this using the http_proxy and https_proxy environment variables
   // cf. https://wiki.archlinux.org/index.php/proxy_settings
   proxy: {
-    // http: 'http://1.2.3.4:80/',
-    // https: 'http://4.3.2.1:80/'
+    http: 'http://127.0.0.1:7000/',
+    https: 'http://127.0.0.1:7000/'
   }
 };
